@@ -11,11 +11,16 @@ click==8.1.8
 dotenv==0.9.9
 frozenlist==1.5.0
 h11==0.14.0
+h2==4.2.0
+hpack==4.1.0
+hyperframe==6.1.0
 idna==3.10
 isort==6.0.1
 multidict==6.4.3
 mypy==1.15.0
 mypy-extensions==1.0.0
+packaging==24.2
+priority==2.0.0
 propcache==0.3.1
 pyflakes==3.3.2
 python-dotenv==1.1.0
@@ -23,5 +28,5 @@ ruff==0.11.5
 serpyco-rs==1.13.0
 SQLAlchemy==2.0.40
 typing_extensions==4.13.2
-uvicorn==0.34.0
+wsproto==1.2.0
 yarl==1.19.0
