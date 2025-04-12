@@ -1,13 +1,16 @@
 aiohappyeyeballs==2.6.1
 aiohttp==3.11.16
+aiohttp-asgi==0.5.2
 aiosignal==1.3.2
 asyncio==3.4.3
 asyncpg==0.30.0
 attributes-doc==0.4.0
 attrs==25.3.0
 autoflake==2.3.1
+click==8.1.8
 dotenv==0.9.9
 frozenlist==1.5.0
+h11==0.14.0
 idna==3.10
 isort==6.0.1
 multidict==6.4.3
@@ -20,4 +23,5 @@ ruff==0.11.5
 serpyco-rs==1.13.0
 SQLAlchemy==2.0.40
 typing_extensions==4.13.2
+uvicorn==0.34.0
 yarl==1.19.0

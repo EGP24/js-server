@@ -25,7 +25,7 @@ async def on_startup(_):
 async def on_shutdown(_):
     await db_client.close()
 
-
+app = create_app()
 if __name__ == '__main__':
-    app = create_app()
-    web.run_app(app, host=environ.get('HOST', '127.0.0.1'), port=int(environ.get('PORT', 8080)))
+    from uvicorn import run
+    run(app, host=environ.get('HOST', '127.0.0.1'), port=int(environ.get('PORT', 8080)))
