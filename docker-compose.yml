@@ -17,6 +17,7 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
     depends_on:
       - db
+    restart: always
 
   db:
     image: postgres:15
@@ -28,6 +29,8 @@ services:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
+    restart: always
+
   nginx:
     image: nginx:latest
     ports:
@@ -36,6 +39,7 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
+    restart: always
 
 volumes:
   db_data:
