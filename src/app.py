@@ -28,4 +28,8 @@ async def on_shutdown(_):
 
 if __name__ == "__main__":
     app = create_app()
-    web.run_app(app, host="0.0.0.0", port=8080)
+    web.run_app(
+        app,
+        host=environ.get('HOST', default='0.0.0.0'),
+        port=environ.get('PORT', default=8080),
+    )
