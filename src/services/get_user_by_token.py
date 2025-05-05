@@ -11,7 +11,6 @@ async def get_user_by_token_and_cohort(*, token: str, cohort: str) -> User:
     if not cohort:
         raise CohortIsRequired
 
-    print('user has token and cohort')
     user = await get_or_raise(
         coroutine=pg_get_user_by_token_and_cohort(token=token, cohort=cohort),
         raise_on_none=UserNotFound,

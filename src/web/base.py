@@ -39,7 +39,6 @@ def with_typehinted_request(func):
         kwargs |= {'request': parsed_request} if parsed_request else {}
         result = await func(**kwargs)
         if (return_type := type_hints.get('return')) and return_type is not type(None):
-            print(return_type, type(None), return_type is not type(None))
             response_mapper = EntityMapper(return_type)
             response_data = {}
             if result:
