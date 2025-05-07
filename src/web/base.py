@@ -24,15 +24,15 @@ def with_typehinted_request(func):
                 continue
             if hint is XAuthorizationRequired:
                 if not (token := request.headers.get('Authorization')):
-                    raise TokenIsRequired
+                    raise TokenIsRequired()
                 kwargs[name] = token
             if hint is XCohortRequired:
                 if not (cohort := request.match_info.get('cohort_id')):
-                    raise CohortIsRequired
+                    raise CohortIsRequired()
                 kwargs[name] = cohort
             if hint is XCardIdRequired:
                 if not (card_id := request.match_info.get('card_id')) or not card_id.isdigit():
-                    raise CardIdIsRequired
+                    raise CardIdIsRequired()
                 kwargs[name] = int(card_id)
 
         kwargs['app'] = request.app

@@ -7,10 +7,14 @@ from src.repositories.postgres.cards_repo import get_card_by_id
 T = TypeVar('T')
 
 
-async def get_or_raise(*, coroutine: Coroutine[None, None, T | None], raise_on_none: Exception | None = None) -> T:
-    raise_on_none = raise_on_none or ResourceNotFound
+async def get_or_raise(
+    *,
+    coroutine: Coroutine[None, None, T | None],
+    raise_on_none: type[Exception] | None = None,
+) -> T:
+    raise_on_none = (raise_on_none or ResourceNotFound)
     if not (result := await coroutine):
-        raise raise_on_none
+        raise raise_on_none()
     return result
 
 

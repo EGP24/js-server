@@ -31,5 +31,5 @@ if __name__ == "__main__":
     web.run_app(
         app,
         host=environ.get('HOST', default='0.0.0.0'),
-        port=environ.get('PORT', default=8080),
+        port=int(environ.get('PORT', default=8080)),
     )

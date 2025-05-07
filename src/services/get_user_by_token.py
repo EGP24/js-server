@@ -7,9 +7,9 @@ from src.repositories.postgres.users_repo import \
 
 async def get_user_by_token_and_cohort(*, token: str, cohort: str) -> User:
     if not token:
-        raise TokenIsRequired
+        raise TokenIsRequired()
     if not cohort:
-        raise CohortIsRequired
+        raise CohortIsRequired()
 
     user = await get_or_raise(
         coroutine=pg_get_user_by_token_and_cohort(token=token, cohort=cohort),
